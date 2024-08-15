@@ -1,0 +1,27 @@
+p.name {
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #545454;
+}
+.petDescription {
+  container-type: size;
+  width: 270px;
+  height: 383px;
+}
+@container (width<271px) {
+  .age,
+  .type,
+  .breed,
+  .description,
+  .inoculations,
+  .diseases,
+  .parasites {
+    display: none;
+  }
+}
+img.petPhoto {
+  margin-bottom: 30px;
+}
