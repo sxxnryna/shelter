@@ -1,0 +1,28 @@
+.petCard {
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border-radius: 9px;
+  width: 270px;
+  height: 435px;
+  transition: 0.3s all ease-in;
+}
+
+.LearnMoreButton {
+  border: 2px solid #f1cdb3;
+  background: #fafafa;
+  border-radius: 100px;
+  width: 187px;
+  height: 52px;
+  align-content: center;
+  margin: 30px 41.5px;
+  transition: 0.2s all ease-in;
+
+  font-family: "Georgia", serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
+  padding: 13px 30px;
+}
