@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shelter</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <main id="main"></main>
+
+    <script type="module">
+      import { CardComponent } from "./CardComponent.js";
+      import { createPopup } from "./popup.js";
+      import { PetComponent } from "../js/PetComponent.js";
+      import { pets } from "../js/pets.js";
+
+      const pet1 = new PetComponent(pets[0]).render();
+      const pet2 = new PetComponent(pets[1]).render();
+
+      const cardOne = new CardComponent({
+        cardContainerId: "cardOne",
+        petComponent: pet1,
+        buttonId: "cardOneButton",
+        buttonContent: "cardOneButton",
+        onLearnMoreButtonClick: () => {
+          createPopup(pet1, "main");
+        },
+      });
+
+      const cardTwo = new CardComponent({
+        cardContainerId: "cardTwo",
+        petComponent: pet2,
+        buttonId: "cardTwoButton",
+        buttonContent: "cardTwoButton",
+        onLearnMoreButtonClick: () => {
+          createPopup(pet2, "main");
+        },
+      });
+
+      const main = document.getElementById("main");
+      main.appendChild(cardOne.render());
+      main.appendChild(cardTwo.render());
+    </script>
+  </body>
+</html>
