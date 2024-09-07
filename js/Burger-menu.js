@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const burgerIcon = document.getElementById("burger-icon");
   const mobileNav = document.getElementById("mobile-nav");
@@ -41,3 +42,4 @@ document.addEventListener("DOMContentLoaded", () => {
     closeMenu(); // toZero
   });
 });
+

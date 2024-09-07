@@ -1,3 +1,4 @@
+
 export class PetCardComponent {
   constructor(pet) {
     this.pet = pet;
@@ -53,3 +54,4 @@ export class PetCardComponent {
     });
   }
 }
+
