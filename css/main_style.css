@@ -1,3 +1,4 @@
+
 * {
   padding: 0px;
   margin: 0px;
@@ -196,7 +197,7 @@ h1 {
   letter-spacing: 0.06em;
   margin-bottom: 11px;
 }
-a.headerLink#fixed {
+a.headerLink#fixed1 {
   cursor: pointer;
   font-size: 15px;
   line-height: 160%;
@@ -420,8 +421,9 @@ div.slider {
   justify-content: center;
   gap: 90px;
   height: 433px;
+  transition: all 0.3s ease;
 }
-div.petCard {
+div.card {
   background: #fafafa;
   border-radius: 9px;
   width: 270px;
@@ -430,20 +432,23 @@ div.petCard {
   transition: 0.3s all ease-in;
 }
 
-button.LearnMoreButton {
+button.learnMore {
+  padding: 15px 42px;
+  margin-top: 31px;
+  margin-bottom: 30px;
   border: 2px solid #f1cdb3;
   background: #fafafa;
   border-radius: 100px;
   width: 187px;
   height: 52px;
   align-content: center;
-  margin: -60px 40px 0 40px;
   transition: 0.2s all ease-in;
 }
-div.petCard:hover .LearnMoreButton {
+div.card:hover .learnMore {
   background: #fddcc4;
+  transition: 0.2s all ease-in;
 }
-div.petCard:hover {
+div.card:hover {
   cursor: pointer;
   background-color: #fff;
   box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -724,7 +729,7 @@ div.footer_adress2 {
   color: #f1cdb3;
 }
 
-/* Pop-up */
+/*Pop up*/
 .overlay {
   position: fixed;
   top: 0;
@@ -737,37 +742,43 @@ div.footer_adress2 {
 }
 
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: transparent;
-  display: none;
   z-index: 15;
 }
 
+.pop-inner {
+  width: 351px;
+  padding: 50px 20px 38px 29px;
+}
+
 .popup-content {
-  width: 952px;
-  height: 552px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 .petCard-pop {
-  width: 900px;
-  height: 500px;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   border-radius: 10px;
   background-color: #fafafa;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .close-button {
-  width: 48px;
-  height: 48px;
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
   background-color: transparent;
   font-family: Georgia, "Times New Roman", Times, serif;
   border: 2px solid #f1cdb3;
@@ -782,15 +793,82 @@ div.footer_adress2 {
   transition: 0.2s all ease-in;
   cursor: pointer;
   z-index: 12;
-  margin-right: 10px;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .close-button:hover {
-  background-color: #fddcc4; /* Цвет фона при наведении */
-  color: #555; /* Цвет крестика при наведении */
+  background-color: #fddcc4;
+  color: #555;
 }
 
-.hidden {
-  display: none;
+img.pop-up {
+  width: 500px;
+  height: 100%;
 }
+h3.pop-name {
+  padding-bottom: 10px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+h4.pop-breed {
+  padding-bottom: 40px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+p.pop-descr {
+  padding-bottom: 40px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+li.pop-li {
+  padding-bottom: 10px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+li.pop-li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+li.pop-li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #f1cdb3;
+}
+
+span.pop-span {
+  font-weight: 700;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+

@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   html {
     scroll-behavior: smooth;
@@ -12,6 +13,9 @@
   }
   html {
     overflow-x: hidden;
+  }
+  html.no-scroll {
+    overflow: hidden;
   }
 
   header {
@@ -35,7 +39,46 @@
     padding: 0;
     width: 100%;
   }
+  /*burger*/
+  .burger-container {
+    display: block;
+  }
+  .overlay.active {
+    display: block;
+  }
+  .burger-icon {
+    margin-top: 30px;
+    display: block;
+  }
+  .burger-icon span {
+    display: block;
+    height: 2px;
+    margin-bottom: 8px;
+    background: #000000;
+  }
 
+  .mobile-nav.active {
+    right: 0;
+    display: block;
+  }
+
+  .overlay.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* burger rotation*/
+  .burger-icon.open img {
+    transform: rotate(90deg) translate(5px, 5px);
+  }
+  /*logo*/
+  div.logo {
+    margin: 30px 46px 0px 20px;
+  }
+  div.headerWrapperBox {
+    padding: 0;
+    width: 100%;
+  }
   /*pets content*/
   div.petsContent_Wrapper {
     margin: 42px 10px 0 10px;
@@ -122,4 +165,67 @@
   footer {
     height: 809px;
   }
+}
+/*Pop-up resize*/
+.pop-inner {
+  padding: 10px;
+  width: 75vw;
+  height: 341px;
+}
+
+.popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.petCard-pop {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.close-button {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 26px;
+  font-weight: bold;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+  z-index: 12;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+img.pop-up {
+  display: none;
+}
+h3.pop-name {
+  text-align: center;
+}
+h4.pop-breed {
+  padding-bottom: 20px;
+  text-align: center;
+}
+p.pop-descr {
+  text-align: justify;
+  padding-bottom: 20px;
+}
+li.pop-li {
+  padding-bottom: 5px;
 }

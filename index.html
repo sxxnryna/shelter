@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,7 +43,7 @@
             <div class="nav">
               <ul class="nav">
                 <li>
-                  <a class="headerLink" id="fixed" href="#start"
+                  <a class="headerLink" id="fixed1" href="#start"
                     >About the shelter</a>
                 </li>
                 <li>
@@ -62,10 +63,11 @@
               <ul>
                 <li><a class="mobile-navi" href="#start" id="fixed">About the shelter</a></li>
                 <li><a class="mobile-navi" href="./our_pets.html">Our pets</a></li>
-                <li><a class="mobile-navi" href="#help">Help the shelter</a></li>
+                <li><a class="mobile-navi" href="./index.html/#help">Help the shelter</a></li>
                 <li><a class="mobile-navi" href="#contact">Contacts</a></li>
               </ul>
             </nav>
+          </div>
           </div>
         </header>
         <div id="overlay" class="overlay"></div>
@@ -141,12 +143,16 @@
                 </div>
                 <div class="slider" id="slider">
                   <script type="module">
+                    document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.remove("no-scroll");
+                    });
 
                     import { slider } from './js/slider.js';
                     import { pets } from "./js/pets.js";
-                    import {PetCardComponent} from "./js/PetCardComponent.js";
+                    import {PetCardComponent} from "./js/PetCardComponent.js"
+                
 
-                    document.addEventListener("DOMContentLoaded", () => {
+                   document.addEventListener("DOMContentLoaded", () => {
                       const sliderElement = document.getElementById("slider");
                       const prevBtn = document.getElementById("previousB");
                       const nextBtn = document.getElementById("nextB");
@@ -382,20 +388,10 @@
         </footer>
       </div>
     </div>
-    <div class="overlay" id="overlay"></div>
-
-    <div class="popup" id="popup">
-      <div class="popup-content">
-        <div class="close-button" id="closeButton">&times;</div>
-        <div class="petCard-pop">
-          <div class="petCard-popInner">
-          </div>
-        
-        </div>
-      </div> 
-    <script src="./js/Pop-up.js" defer></script>
-    <script src="./js/index.js"></script>
-    
-    <script src="./js/Burger-menu.js" defer></script>
+    <script type="module" src="./js/Pop-up.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/PetCardComponent.js"></script>
+    <script type="module" src="./js/Burger-menu.js"></script>
   </body>
 </html>
+

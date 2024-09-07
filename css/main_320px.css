@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
   * {
     padding: 0px;
@@ -16,7 +17,11 @@
   html.no-scroll {
     overflow: hidden;
   }
-
+  div.burger {
+    padding: 30px 20px 0 0;
+    display: flex;
+    align-items: center;
+  }
   /*burger*/
   .burger-container {
     display: block;
@@ -25,6 +30,7 @@
     display: block;
   }
   .burger-icon {
+    margin-top: 30px;
     display: block;
   }
   .burger-icon span {
@@ -369,4 +375,68 @@
   footer {
     height: 809px;
   }
+}
+
+/*Pop-up resize*/
+.pop-inner {
+  padding: 10px;
+  width: 75vw;
+  height: 341px;
+}
+
+.popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.petCard-pop {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.close-button {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 26px;
+  font-weight: bold;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+  z-index: 12;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+img.pop-up {
+  display: none;
+}
+h3.pop-name {
+  text-align: center;
+}
+h4.pop-breed {
+  padding-bottom: 20px;
+  text-align: center;
+}
+p.pop-descr {
+  text-align: justify;
+  padding-bottom: 20px;
+}
+li.pop-li {
+  padding-bottom: 5px;
 }

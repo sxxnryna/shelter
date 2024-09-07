@@ -1,3 +1,4 @@
+
 export function slider(previousValues, itemsToShow, allPets) {
   const petIndexes = generator(previousValues, itemsToShow, allPets);
   return petIndexes;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +42,7 @@
               <li>
                 <a class="headerLink" href="./index.html">About the shelter</a>
               </li>
-              <li><a class="headerLink" id="fixed" href="#">Our pets</a></li>
+              <li><a class="headerLink" id="fixed1" href="#">Our pets</a></li>
               <li>
                 <a class="headerLink" href="./index.html#help"
                   >Help the shelter</a
@@ -50,110 +51,45 @@
               <li><a class="headerLink" href="#contacts">Contacts</a></li>
             </ul>
           </div>
-          <div class="burger">
-            <a href="#"
-              ><img src="./assets/buttons/BurgerBlack.svg" alt="burer"
-            /></a>
+          <div class="burger-container">
+            <div id="burger-icon" class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
           </div>
+          <nav id="mobile-nav" class="mobile-nav">
+            <ul>
+              <li><a class="mobile-navi" href="./index.html">About the shelter</a></li>
+              <li><a class="mobile-navi" id="fixed" href="#">Our pets</a></li>
+              <li><a class="mobile-navi" href="#help">Help the shelter</a></li>
+              <li><a class="mobile-navi" href="#contact">Contacts</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
+      </div>
     </header>
+    <div id="overlay" class="overlay"></div>
     <main>
       <div class="petsContent_Wrapper">
         <h3 class="pet">Our friends who <br />are looking for a house</h3>
-        <div class="cardsContent">
-          <div class="card">
-            <img
-              class="cardImg"
-              src="./assets/pets-katrine.png"
-              alt="katrine"
-            />
-            <div class="card1">
-              <p class="pets">Katrine</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/pets-jennifer.png" alt="jennifer" />
-            <div class="card1">
-              <p class="pets">Jennifer</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card">
-            <img src="./assets/pets-woody.png" alt="woody" />
-            <div class="card1">
-              <p class="pets">Woody</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card hide-off">
-            <img src="./assets/pets-sophia.png" alt="sophia" />
-            <div class="card1">
-              <p class="pets">Sophia</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card hide-off">
-            <img src="./assets/pets-timmy.png" alt="timmy" />
-            <div class="card1">
-              <p class="pets">Timmy</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card hide-off">
-            <img src="./assets/pets-charly.png" alt="charly" />
-            <div class="card1">
-              <p class="pets">Charly</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card hide-off768">
-            <img src="./assets/pets-scarlet.png" alt="scarlet" />
-            <div class="card1">
-              <p class="pets">Scarlet</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
-          <div class="card hide-off768">
-            <img src="./assets/pets-freddie.png" alt="freddie" />
-            <div class="card1">
-              <p class="pets">Freddie</p>
-              <button class="learnMore">
-                <p class="petsMore">Learn more</p>
-              </button>
-            </div>
-          </div>
+        <div class="cardsContent" id="petsContainer">
         </div>
         <div class="navigator">
           <div class="round1">
-            <a href="#" class="pagination disabled"><<</a>
+            <button id="firstButton" class="pagination">&lt;&lt;</button>
           </div>
           <div class="round2">
-            <a href="#" class="pagination disabled"><</a>
+            <button id="prevButton" class="pagination">&lt;</button>
           </div>
           <div class="number">
-            <a href="#" class="pagination activePage">1</a>
+            <button id="currentPage" class="pagination activePage">1</button>
           </div>
           <div class="round3">
-            <a href="#" class="pagination">></a>
+            <button id="nextButton" class="pagination">></button>
           </div>
           <div class="round4">
-            <a href="#" class="pagination">>></a>
+            <button id="lastButton" class="pagination">>></button>
           </div>
         </div>
       </div>
@@ -202,5 +138,14 @@
         />
       </div>
     </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+      // Удаляем класс no-scroll при загрузке страницы
+      document.body.classList.remove("no-scroll");
+      });
+      </script>
+    <script src="./js/Burger-menu.js" defer></script>
+    <script src="./js/Pagination.js" type="module"></script>
   </body>
+  
 </html>

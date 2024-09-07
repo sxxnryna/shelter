@@ -1,5 +1,7 @@
+
 export const pets = [
   {
+    id: "1001",
     name: "Jennifer",
     img: "./assets/pets-jennifer.png",
     type: "Dog",
@@ -12,6 +14,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1002",
     name: "Sophia",
     img: "./assets/pets-sophia.png",
     type: "Dog",
@@ -24,6 +27,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1003",
     name: "Woody",
     img: "./assets/pets-woody.png",
     type: "Dog",
@@ -36,6 +40,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1004",
     name: "Scarlett",
     img: "./assets/pets-scarlet.png",
     type: "Dog",
@@ -48,6 +53,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1005",
     name: "Katrine",
     img: "./assets/pets-katrine.png" /*path as this one*/,
     type: "Cat",
@@ -60,6 +66,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1006",
     name: "Timmy",
     img: "./assets/pets-timmy.png",
     type: "Cat",
@@ -72,6 +79,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1007",
     name: "Freddie",
     img: "./assets/pets-freddie.png",
     type: "Cat",
@@ -84,6 +92,7 @@ export const pets = [
     parasites: ["none"],
   },
   {
+    id: "1008",
     name: "Charly",
     img: "./assets/pets-charly.png",
     type: "Dog",
