@@ -1,4 +1,3 @@
-
 export const pets = [
   {
     id: "1001",
