@@ -5,6 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main_style.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 768px) and (max-width: 1199px)"
+      href="./css/main_768px.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (min-width: 320px) and (max-width: 767px)"
+      href="./css/main_320px.css"
+    />
     <link rel="stylesheet" href="./css/PetComponent.css" />
     <link rel="stylesheet" href="./css/PetCardComponent.css" />
     <link
@@ -17,10 +27,8 @@
       href="./assets/icon/favicon_shelter.svg"
       rel="icon"
     />
-    <script src="./index.js"></script>
-    <script src="./PetCardComponent.js"></script>
   </head>
-  <body>
+  <body class="no-scroll">
     <div class="wrapper">
       <div class="container">
         <header>
@@ -34,9 +42,8 @@
             <div class="nav">
               <ul class="nav">
                 <li>
-                  <a class="headerLink" id="fixed" href="#"
-                    >About the shelter</a
-                  >
+                  <a class="headerLink" id="fixed1" href="#start"
+                    >About the shelter</a>
                 </li>
                 <li>
                   <a class="headerLink" href="./our_pets.html">Our pets</a>
@@ -45,15 +52,26 @@
                 <li><a class="headerLink" href="#contacts">Contacts</a></li>
               </ul>
             </div>
-            <div class="burger">
-              <a href="#"
-                ><img src="./assets/buttons/Burger.svg" alt="burer"
-              /></a>
+            <div class="burger-container">
+              <div id="burger-icon" class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+            <nav id="mobile-nav" class="mobile-nav">
+              <ul>
+                <li><a class="mobile-navi" href="#start" id="fixed">About the shelter</a></li>
+                <li><a class="mobile-navi" href="./our_pets.html">Our pets</a></li>
+                <li><a class="mobile-navi" href="./index.html/#help">Help the shelter</a></li>
+                <li><a class="mobile-navi" href="#contact">Contacts</a></li>
+              </ul>
+            </nav>
+          </div>
           </div>
         </header>
+        <div id="overlay" class="overlay"></div>
         <main>
-          <div class="startScreen">
+          <div class="startScreen" id="start">
             <div class="startScreenContent">
               <div class="content">
                 <h2>Not only people <br class="size320" />need a house</h2>
@@ -62,15 +80,17 @@
                   extremely wide and open heart. He or she will love you more
                   than anybody else in the world, you will see!
                 </p>
-                <a class="pets" href="#pets">Make a friend</a>
+                <div class="startButton">
+                  <a class="pets" href="#pets">Make a friend</a>
+                </div>
               </div>
-              <picture class="introImg">
+              <div class="screenPuppyBox">
                 <img
                   class="screenPuppy"
                   src="./assets/start-screen-puppy.png"
                   alt="puppy"
                 />
-              </picture>
+              </div>
             </div>
           </div>
           <div class="about">
@@ -105,7 +125,7 @@
                 Our friends who <br />are looking for a house
               </h3>
               <div class="sliderBox">
-                <div class="sliderButtonL">
+                <div class="sliderButtonL" id="previousB">
                   <button class="previous">
                     <span class="hidden">Previous card</span>
                     <svg
@@ -122,24 +142,70 @@
                 </div>
                 <div class="slider" id="slider">
                   <script type="module">
-                    const petIndexes = slider();
-                    import { pets } from "./pets.js";
-                    const sliderElement = document.getElementById("slider");
-                    const petCardComponent = new PetCardComponent(
-                      pets[petIndexes[0]]
-                    );
-                    sliderElement.appendChild(petCardComponent.render());
-                    const petCardComponent1 = new PetCardComponent(
-                      pets[petIndexes[1]]
-                    );
-                    sliderElement.appendChild(petCardComponent1.render());
-                    const petCardComponent2 = new PetCardComponent(
-                      pets[petIndexes[2]]
-                    );
-                    sliderElement.appendChild(petCardComponent2.render());
+                    document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.remove("no-scroll");
+                    });
+
+                    import { slider } from './js/slider.js';
+                    import { pets } from "./js/pets.js";
+                    import {PetCardComponent} from "./js/PetCardComponent.js"
+                
+
+                   document.addEventListener("DOMContentLoaded", () => {
+                      const sliderElement = document.getElementById("slider");
+                      const prevBtn = document.getElementById("previousB");
+                      const nextBtn = document.getElementById("nextB");
+
+                      let previousValues = [];
+                      let currentValues = [];
+                      let itemsToShow = 3;
+                      const totalPets = pets.length;
+
+                      function updateSlider(indexes) {
+                        sliderElement.innerHTML = '';
+                        indexes.forEach(index => {
+                          const petCardComponent = new PetCardComponent(pets[index]);
+                          sliderElement.appendChild(petCardComponent.render());
+                        });
+                      }
+
+                      function handleResize() {
+                        if (window.innerWidth >= 1280) {
+                          itemsToShow = 3;
+                        } else if (window.innerWidth >= 768) {
+                          itemsToShow = 2;
+                        } else {
+                          itemsToShow = 1;
+                        }
+                        currentValues = slider(previousValues, itemsToShow, pets);
+                        updateSlider(currentValues);
+                      }
+                      
+                      function updateSliderContent() {
+                        previousValues = [...currentValues]; // Save previous
+                        currentValues = slider(previousValues, itemsToShow, pets);
+                        updateSlider(currentValues);
+                      }
+
+                        prevBtn.addEventListener('click', () => {
+                        if (previousValues.length > 0) {
+                          const temp = currentValues;
+                          currentValues = previousValues;
+                          previousValues = temp;
+                          updateSlider(currentValues);
+                        }
+                      });
+                      nextBtn.addEventListener('click', () => {
+                      updateSliderContent();
+                      });
+
+                      window.addEventListener('resize', handleResize);
+
+                      handleResize();
+                    });
                   </script>
                 </div>
-                <div class="sliderButtonR">
+                <div class="sliderButtonR" id="nextB">
                   <button class="next">
                     <span class="hidden">Next card</span>
                     <svg
@@ -159,8 +225,7 @@
                 </div>
               </div>
               <a class="getToKnow" href="./our_pets.html"
-                >Get to know the rest</a
-              >
+                >Get to know the rest</a>
             </div>
           </div>
           <div class="help" id="help">
@@ -322,5 +387,9 @@
         </footer>
       </div>
     </div>
+    <script type="module" src="./js/Pop-up.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/PetCardComponent.js"></script>
+    <script type="module" src="./js/Burger-menu.js"></script>
   </body>
 </html>

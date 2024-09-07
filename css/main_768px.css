@@ -1,0 +1,236 @@
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  div.wrapper {
+    position: relative;
+  }
+  div.headerWrapperBox {
+    width: 100%;
+    padding: 30px 30px 0 30px;
+  }
+  div.nav {
+    width: 443px;
+  }
+  div.burger {
+    display: none;
+  }
+  nav.mobile-nav {
+    display: none;
+  }
+  div.container {
+    position: relative;
+  }
+
+  /*start screen*/
+  div.startScreenContent {
+    width: 569px;
+    gap: 100px;
+    padding: 60px 70px 0 69px;
+    flex-direction: column;
+  }
+  div.startButton {
+    display: flex;
+    justify-content: center;
+  }
+  picture.introImg {
+    margin-right: -120px;
+  }
+  img.screenPuppy {
+    width: 569px;
+    height: 593px;
+  }
+}
+
+div.sliderBox {
+  width: auto;
+}
+
+/*about*/
+div.aboutContent {
+  flex-direction: column-reverse;
+  padding: 0 0;
+  margin: 80px 166px 100px 165px;
+}
+div.contentAbout {
+  margin-bottom: 80px;
+}
+img.about {
+  margin: 0;
+}
+/*pets*/
+
+div.petsContent {
+  margin: 80px 30px 100px 30px;
+  padding: 80px 0 100px 0;
+}
+p.petsMore {
+  margin-top: 3px;
+}
+h3.centerText {
+  padding-bottom: 60px;
+}
+div.sliderBox {
+  width: auto;
+  gap: 12px;
+}
+div.slider {
+  margin: 0;
+  gap: 40px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+div.sliderButtonL,
+div.sliderButtonR {
+  margin: 0;
+  padding: 0;
+  margin-right: 1px;
+}
+a.getToKnow {
+  margin-top: 60px;
+}
+img.cardImg {
+  margin-bottom: 27px;
+}
+
+/*help*/
+div.helpWrapper {
+  margin: 80px 69px 100px 69px;
+  padding: 0;
+}
+div.list {
+  gap: 60px;
+  row-gap: 55px;
+}
+div.listBox {
+  width: 170px;
+  height: 113px;
+}
+
+/*donations*/
+div.donationWrapper {
+  max-width: 768px;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+div.donationInfo {
+  margin: 80px 194px 60px 194px;
+}
+div.donationImg_box {
+  margin-right: 0;
+  margin-bottom: 100px;
+}
+h3.donation {
+  margin-bottom: 18px;
+}
+/*footer*/
+div.footerWrapper {
+  max-width: 768px;
+  height: 639px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+img.imgFooter {
+  position: absolute;
+  margin-top: 329px;
+  margin-left: 234px;
+}
+div.contacts {
+  padding-top: 0;
+  margin-top: 30px;
+  margin-left: 64px;
+}
+div.locations {
+  padding-top: 0;
+  margin-top: 30px;
+  margin-right: 64px;
+}
+div.footer_adress1 {
+  margin-bottom: 32px;
+  margin-top: -6px;
+}
+div.footerLink {
+  display: block;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+  padding: 5px 0px 5px 60px;
+}
+div.footerLink_adress {
+  display: block;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+/*Pop-up resize*/
+.pop-inner {
+  width: 36.5vw;
+  max-width: 400px;
+  gap: 20px;
+  padding: 10px 9px 37px 11px;
+}
+
+.popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.petCard-pop {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.close-button {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 26px;
+  font-weight: bold;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+  z-index: 12;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+img.pop-up {
+  width: 45.5vw;
+  max-width: 500px;
+}
+h4.pop-breed {
+  padding-bottom: 20px;
+}
+p.pop-descr {
+  padding-bottom: 20px;
+}
+li.pop-li {
+  padding-bottom: 5px;
+}

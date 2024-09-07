@@ -1,0 +1,148 @@
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  html {
+    scroll-behavior: smooth;
+  }
+  div.wrapper {
+    position: relative;
+  }
+  div.headerWrapperBox {
+    width: 100%;
+    padding: 0 30px 0 30px;
+  }
+  div.nav {
+    width: 443px;
+  }
+  div.burger {
+    display: none;
+  }
+  div.container {
+    position: relative;
+  }
+  /*main*/
+  div.petsContent_Wrapper {
+    padding: 60px 30px 70px 30px;
+  }
+  h3.pet {
+    margin-top: 21px;
+    margin-bottom: 30px;
+  }
+  div.cardsContent {
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 40px;
+    margin-bottom: 38px;
+  }
+  div.hide-off768 {
+    display: none;
+  }
+
+  /*footer*/
+  div.footerWrapper {
+    max-width: 768px;
+    height: 639px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  img.imgFooter {
+    position: absolute;
+    margin-top: 329px;
+    margin-left: 234px;
+  }
+  div.contacts {
+    padding-top: 0;
+    margin-top: 30px;
+    margin-left: 64px;
+  }
+  div.locations {
+    padding-top: 0;
+    margin-top: 30px;
+    margin-right: 64px;
+  }
+  div.footer_adress1 {
+    margin-bottom: 32px;
+    margin-top: -6px;
+  }
+  div.footerLink {
+    display: block;
+    font-family: "Georgia", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+    padding: 5px 0px 5px 60px;
+  }
+  div.footerLink_adress {
+    display: block;
+    font-family: "Georgia", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #f1cdb3;
+  }
+}
+/*Pop-up resize*/
+.pop-inner {
+  width: 36.5vw;
+  max-width: 100%;
+  gap: 20px;
+  padding: 10px 9px 37px 11px;
+}
+
+.popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.petCard-pop {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.close-button {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  background-color: transparent;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  color: #292929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 26px;
+  font-weight: bold;
+  transition: 0.2s all ease-in;
+  cursor: pointer;
+  z-index: 12;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+img.pop-up {
+  width: 45.5vw;
+  max-width: 100%;
+  max-height: 100%;
+}
+h4.pop-breed {
+  padding-bottom: 20px;
+}
+p.pop-descr {
+  padding-bottom: 20px;
+}
+li.pop-li {
+  padding-bottom: 5px;
+}

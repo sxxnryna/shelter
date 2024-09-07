@@ -25,3 +25,14 @@ p.name {
 img.petPhoto {
   margin-bottom: 30px;
 }
+@container (width>271px) {
+  .age,
+  .type,
+  .breed,
+  .description,
+  .inoculations,
+  .diseases,
+  .parasites {
+    display: flex;
+  }
+}
